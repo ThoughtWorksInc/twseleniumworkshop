@@ -9,3 +9,6 @@ out/
 .project
 build/
 .gradle/
+/bin/
+gradle/*
+.settings/
