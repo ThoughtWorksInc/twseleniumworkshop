@@ -1,6 +1,7 @@
 .idea/
 out/
 .DS_Store
+*.jar
 *.iml
 *.class
 .classpath/
