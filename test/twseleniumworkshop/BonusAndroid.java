@@ -3,6 +3,7 @@ package twseleniumworkshop;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -33,6 +34,7 @@ public class BonusAndroid {
 		driver.quit();
 	}
 
+	@Ignore
 	@Test
 	public void verificaTituloAmazon() {
 		driver.get("http://www.amazon.com/");
