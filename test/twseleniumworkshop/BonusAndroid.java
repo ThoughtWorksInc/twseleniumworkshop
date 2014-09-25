@@ -19,10 +19,11 @@ public class BonusAndroid {
 
 	@Before
 	 public void setUp() throws Exception {
+		//Configura o browser, versão e plataforma
 		DesiredCapabilities capabilities = DesiredCapabilities.android();
 		capabilities.setCapability("version", "4.4");
 		capabilities.setCapability("platform", Platform.ANDROID);
-        // Create the connection to Sauce Labs to run the tests
+        // Cria nova conexão no SauceLabs para rodar os testes
         this.driver = new RemoteWebDriver(
         		new URL("http://usuario:chavepublica@ondemand.saucelabs.com:80/wd/hub"),
                         capabilities);

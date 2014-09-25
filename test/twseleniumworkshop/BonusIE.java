@@ -19,11 +19,11 @@ public class BonusIE {
 
 	@Before
 	public void setUp() throws Exception {
-		// Choose the browser, version, and platform to test
+		// Configura o browser, versão e plataforma
 		DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 		capabilities.setCapability("version", "8.0");
 		capabilities.setCapability("platform", Platform.VISTA);
-		// Create the connection to Sauce Labs to run the tests
+		// Cria nova conexão no SauceLabs para rodar os testes
 		this.driver = new RemoteWebDriver(
 				new URL("http://usuario:chavepublica@ondemand.saucelabs.com:80/wd/hub"),
 				capabilities);
