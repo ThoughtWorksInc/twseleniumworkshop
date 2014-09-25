@@ -32,11 +32,11 @@ public class Exercicio1 {
     public void realizaBusca() {
         driver.get("http://www.google.com");
 
-        WebElement searchInput = driver.findElement(By.id("gbqfq"));
-        searchInput.sendKeys("Pão de Queijo Mineiro");
+        WebElement inputProcura = driver.findElement(By.id("gbqfq"));
+        inputProcura.sendKeys("Pão de Queijo Mineiro");
 
-        WebElement submitButton = driver.findElement(By.id("gbqfb"));
-        submitButton.click();
+        WebElement botaoSubmit = driver.findElement(By.id("gbqfb"));
+        botaoSubmit.click();
 
         WebElement link = driver.findElement(By.linkText("Pão de Queijo Mineiro"));
         assertThat(link.isDisplayed(), equalTo(Boolean.TRUE));

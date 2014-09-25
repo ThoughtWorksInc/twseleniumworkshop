@@ -40,22 +40,22 @@ public class Exercicio2 {
     public void preencheEnviaFormulario() {
         driver.get("http://tinyurl.com/twseleniumworkshop");
 
-        WebElement candidateName = driver.findElement(By.id("entry_1050252143"));
-        candidateName.sendKeys("Capitão Caverna");
+        WebElement nomeCandidato = driver.findElement(By.id("entry_1050252143"));
+        nomeCandidato.sendKeys("Capitão Caverna");
 
-        Select programmingLanguage = new Select(driver.findElement(By.id("entry_2043435478")));
-        programmingLanguage.selectByValue("Java");
+        Select linguagemProgramacao = new Select(driver.findElement(By.id("entry_2043435478")));
+        linguagemProgramacao.selectByValue("Java");
 
-        WebElement webdriverKnowledge = driver.findElement(By.cssSelector("input[value= 'What is Selenium-WebDriver?']"));
-        webdriverKnowledge.click();
+        WebElement conhecimentoWebdriver = driver.findElement(By.cssSelector("input[value= 'What is Selenium-WebDriver?']"));
+        conhecimentoWebdriver.click();
 
         WebElement browser = driver.findElement(By.cssSelector("input[value= 'Firefox']"));
         browser.click();
 
-        WebElement submitButton = driver.findElement(By.id("ss-submit"));
-        submitButton.click();
+        WebElement botaoSubmit = driver.findElement(By.id("ss-submit"));
+        botaoSubmit.click();
 
-        Boolean response = driver.findElement(By.className("ss-resp-message")).isDisplayed();
-        assertThat(response, is(true));
+        Boolean resposta = driver.findElement(By.className("ss-resp-message")).isDisplayed();
+        assertThat(resposta, is(true));
     }
 }
