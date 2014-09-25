@@ -4,6 +4,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -17,17 +18,15 @@ public class BonusAndroid {
 	private WebDriver driver;
 
 	@Before
-	public void setUp() throws Exception {
-		// Choose the browser, version, and platform to test
-		DesiredCapabilities capabilities = DesiredCapabilities.phantomjs();
-		// capabilities.setCapability("version", "");
-		capabilities.setCapability("device", "iphone");
-		// capabilities.setCapability("platform", Platform.ANY);
-		// Create the connection to Sauce Labs to run the tests
-		this.driver = new RemoteWebDriver(
-				new URL("http://usuario:chaveprivada@ondemand.saucelabs.com:80/wd/hub"),
-				capabilities);
-	}
+	 public void setUp() throws Exception {
+		DesiredCapabilities capabilities = DesiredCapabilities.android();
+		capabilities.setCapability("version", "4.4");
+		capabilities.setCapability("platform", Platform.ANDROID);
+        // Create the connection to Sauce Labs to run the tests
+        this.driver = new RemoteWebDriver(
+        		new URL("http://usuario:chavepublica@ondemand.saucelabs.com:80/wd/hub"),
+                        capabilities);
+}
 
 	@After
 	public void tearDown() {
