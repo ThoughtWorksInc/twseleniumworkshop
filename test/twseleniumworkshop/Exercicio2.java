@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.concurrent.TimeUnit;
@@ -39,20 +40,22 @@ public class Exercicio2 {
     public void preencheEnviaFormulario() {
         driver.get("http://tinyurl.com/twseleniumworkshop");
 
-        driver.findElement(By.id("entry_1050252143")).sendKeys("Luiza");
+        WebElement candidateName = driver.findElement(By.id("entry_1050252143"));
+        candidateName.sendKeys("Capitão Caverna");
 
-        Select linguagemProgramacao = new Select(driver.findElement(By.id("entry_2043435478")));
-        linguagemProgramacao.selectByValue("Java");
+        Select programmingLanguage = new Select(driver.findElement(By.id("entry_2043435478")));
+        programmingLanguage.selectByValue("Java");
 
-        driver.findElement(By.cssSelector("input[value= 'What is Selenium-WebDriver?']")).click();
+        WebElement webdriverKnowledge = driver.findElement(By.cssSelector("input[value= 'What is Selenium-WebDriver?']"));
+        webdriverKnowledge.click();
 
-        driver.findElement(By.cssSelector("input[value= 'Firefox']")).click();
-        driver.findElement(By.cssSelector("input[value= 'Safari']")).click();
+        WebElement browser = driver.findElement(By.cssSelector("input[value= 'Firefox']"));
+        browser.click();
 
-        driver.findElement(By.id("ss-submit")).click();
+        WebElement submitButton = driver.findElement(By.id("ss-submit"));
+        submitButton.click();
 
-        String response = driver.findElement(By.className("ss-resp-message")).getText();
-
-        assertThat(response, is("Sua resposta foi registrada."));
+        Boolean response = driver.findElement(By.className("ss-resp-message")).isDisplayed();
+        assertThat(response, is(true));
     }
 }
