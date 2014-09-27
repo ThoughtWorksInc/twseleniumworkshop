@@ -10,5 +10,4 @@ out/
 build/
 .gradle/
 /bin/
-gradle/*
 .settings/
