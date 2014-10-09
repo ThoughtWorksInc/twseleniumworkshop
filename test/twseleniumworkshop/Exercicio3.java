@@ -49,7 +49,7 @@ public class Exercicio3 {
       2. Preencher campo de email com: bruno@gmail.com
       3. Preencher campo de senha com: Tartaruga01
       4. Clicar no botão de login
-      5. Verificar se o texto "Personal Information" existe na página
+      5. Verificar se o usuário realizou login com sucesso
     */
 
     @Test
@@ -60,7 +60,7 @@ public class Exercicio3 {
         driver.findElement(By.id("login-cta"));
         String mensagem = driver.findElement(By.className("fk-font-verybig")).getText();
 
-        assertThat(mensagem, not("Personal Information"));
+        assertThat(mensagem, not("Login successful!"));
     }
 
     public int geraNumeroRandomico() {
